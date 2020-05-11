@@ -128,16 +128,16 @@ setsebool -P nis_enabled 1
 
 ![alt text](screenshots/12-3.png)
 
-Выведем список разрешенных SELinux'ом портов для типа http\_port_t:
+Выведем список разрешенных SELinux'ом портов для типа http_port_t:
 ```
-[root@selinux ~]# semanage port -l | grep -w http\_port_t
+[root@selinux ~]# semanage port -l | grep -w http_port_t
 http_port_t                    tcp      80, 81, 443, 488, 8008, 8009, 8443, 9000
 ```
 Видим, что нашего порта 8888 в этом списке нет, добавим его:
 ```
-[root@selinux ~]# semanage port -a -t http\_port_t -p tcp 8888
-[root@selinux ~]# semanage port -l | grep -w http\_port_t
-http\_port_t                    tcp      8888, 80, 81, 443, 488, 8008, 8009, 8443, 9000
+[root@selinux ~]# semanage port -a -t http_port_t -p tcp 8888
+[root@selinux ~]# semanage port -l | grep -w http_port_t
+http_port_t                    tcp      8888, 80, 81, 443, 488, 8008, 8009, 8443, 9000
 ```
 Рестартанем наш nginx.service и проверим его доступность:
 
