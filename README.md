@@ -331,7 +331,7 @@ Hash: isc-worker0000,named_t,etc_t,file,create
 
 </details>
 
-Видим, что SELinux запрещает утилите `/usr/sbin/named` доступ к файлу `named.ddns.lab.view1.jnl`, а также предлагает два варианта решения проблемы:
+Видим, что SELinux запрещает утилите `/usr/sbin/named` доступ к созданию файла `named.ddns.lab.view1.jnl`, а также предлагает два варианта решения проблемы:
 1й - с помошью утилиты `audit2allow` создать ращрешающий модуль;
 2й - с помощью утилиты `semanage` изменить контекст для файла `named.ddns.lab.view1.jnl`.
 
