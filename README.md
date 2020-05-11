@@ -151,7 +151,7 @@ http\_port_t                    tcp      8888, 80, 81, 443, 488, 8008, 8009, 844
 
 Для формирования и установки модуля SELinux воспользуемся утилитой audit2allow, перенаправив на её stdin лог SELinux:
 ```
-[root@selinux ~]# audit2allow -M my\_nginx_service < /var/log/audit/audit.log 
+[root@selinux ~]# audit2allow -M my_nginx_service < /var/log/audit/audit.log 
 ******************** IMPORTANT ***********************
 To make this policy package active, execute:
 
